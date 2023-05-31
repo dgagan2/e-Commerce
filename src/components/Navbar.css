@@ -1,0 +1,16 @@
+.logo{
+    width: 140px;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 50px 5px 50px;
+    background-color: rgb(83, 83, 83);
+}
+.searchIcon{
+    width: 25px;
+}
+nav button{
+    background-color: transparent;
+}
