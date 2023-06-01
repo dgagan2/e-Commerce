@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Dropdown = () => {
+const DropdownUser = () => {
   return (
     <>
       <div className='dropdown'>
         <button className='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton1' data-bs-toggle='dropdown' aria-expanded='false'>
-          Categorias
+          User
         </button>
         <ul className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
           <li><a className='dropdown-item' href='#'>Action</a></li>
@@ -18,4 +18,4 @@ const Dropdown = () => {
   )
 }
 
-export default Dropdown
+export default DropdownUser
