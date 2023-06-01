@@ -1,0 +1,15 @@
+ul{
+    list-style: none;
+    margin: 10;
+    padding: 10;
+  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+img{
+    width: 320px;
+}
+section{
+    display: flex;
+   flex-wrap: wrap;
+}
