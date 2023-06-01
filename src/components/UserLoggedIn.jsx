@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import DropdownUser from './DropdownUser'
 import carrito from '../assets/carrito.png'
 import user from '../assets/user.png'
+import { NavLink } from 'react-router-dom'
 
 const UserLoggedIn = () => {
   const [isLoggin, setIsLoggin] = useState(false)
@@ -17,10 +18,11 @@ const UserLoggedIn = () => {
             </button>
           </div>
           )
-        : (<button id='buttonLogin'>
-          <img src={user} />
-          Login
-           </button>
+        : (
+          <NavLink id='buttonLogin' to='/login/'>
+            <img src={user} />
+            Login
+          </NavLink>
           )}
     </section>
   )

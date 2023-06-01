@@ -1,6 +1,8 @@
 import React from 'react'
-
+import { GetAllCategories } from '../API/getData'
+import { Link } from 'react-router-dom'
 const DropdownCategories = () => {
+  const newCategories = GetAllCategories()
   return (
     <>
       <div className='dropdown'>
@@ -8,9 +10,9 @@ const DropdownCategories = () => {
           Categorias
         </button>
         <ul className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
-          <li><a className='dropdown-item' href='#'>Action</a></li>
-          <li><a className='dropdown-item' href='#'>Another action</a></li>
-          <li><a className='dropdown-item' href='#'>Something else here</a></li>
+          {newCategories.map((Categories) => (
+            <li key={Categories.id}><Link className='dropdown-item' to={`/${Categories.id}`}>{Categories.name}</Link></li>
+          ))}
         </ul>
       </div>
 
