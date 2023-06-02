@@ -1,5 +1,5 @@
 import React from 'react'
-import { GetAllCategories } from '../API/getData'
+import { GetAllCategories } from '../../API/getData'
 import { Link } from 'react-router-dom'
 const DropdownCategories = () => {
   const newCategories = GetAllCategories()

@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router'
-import Home from '../page/Home'
-import Login from '../page/Login'
+import Home from '@/page/home/Home'
+import Login from '@/page/login/Login'
 
 const RoutesIndex = () => {
   return (

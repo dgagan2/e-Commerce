@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-
 const Product = 'https://api.escuelajs.co/api/v1/products'
 const Categories = 'https://api.escuelajs.co/api/v1/categories'
 
 const GetAllProduct = (id, search) => {
   const [products, setProducts] = useState([])
+
   const url = () => {
     if (!id && !search) {
       return (Product)

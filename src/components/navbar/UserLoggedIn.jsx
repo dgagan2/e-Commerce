@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import DropdownUser from './DropdownUser'
-import carrito from '../assets/carrito.png'
-import user from '../assets/user.png'
+import carrito from '@/assets/carrito.png'
+import user from '@/assets/user.png'
 import { NavLink } from 'react-router-dom'
 
 const UserLoggedIn = () => {
