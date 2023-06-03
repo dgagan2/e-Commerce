@@ -2,14 +2,17 @@ ul{
     list-style: none;
     margin: 10;
     padding: 10;
-  
+    gap: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    width: 80%;
 }
 img{
-    width: 320px;
+    width: 260px;
 }
 section{
     display: flex;
    flex-wrap: wrap;
+   padding: 30px;
+   justify-content: center;
 }

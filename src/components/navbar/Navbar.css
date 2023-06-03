@@ -29,6 +29,7 @@ nav button{
     align-items: center;
     gap: 10px;
     width: 70%;
+    flex-direction: row;
 }
 
 .userLoggedIn button{

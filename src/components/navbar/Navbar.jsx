@@ -5,25 +5,26 @@ import '@/components/navbar/Navbar.css'
 import UserLoggedIn from './UserLoggedIn'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { useProductContext } from '../../hooks/UseProductContext'
+import { useProductContext } from '@/hooks/UseProductContext'
 const Navbar = () => {
   const [error, setError] = useState('')
-  const { search, setSearch } = useProductContext()
+  const { setSearch } = useProductContext()
+  const [localValue, setLocalValue] = useState('')
   const handleSubmit = (event) => {
     event.preventDefault()
-    if (search === '') {
+    if (localValue === '') {
       setError('El campo no puede estar vacio')
       return
     }
-    if (search.length > 3) {
+    if (localValue.length > 3) {
       setError('')
+      setSearch(localValue)
       return
     }
     if (error.length > 0) {
       setSearch('')
     }
   }
-  console.log(error)
   return (
     <nav>
       <Link to='/'>
@@ -32,8 +33,8 @@ const Navbar = () => {
       <div className='sectionSearch'>
         <DropdownCategories />
         <form className='formSearch' onSubmit={handleSubmit}>
-          <input type='text' placeholder={error ? `${error}` : 'Busca tu producto'} name='search' id='search' value={search} onChange={(event) => setSearch(event.target.value)} />
-          <button className='searchButton' onSubmit={handleSubmit}>
+          <input type='text' placeholder='Busca tu producto' name='search' id='search' value={localValue} onChange={(event) => setLocalValue(event.target.value)} />
+          <button className='searchButton' onClick={handleSubmit}>
             <img src={buscar} />
           </button>
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '@/assets/logo.png'
 import { Link } from 'react-router-dom'
+import '@/page/login/login.css'
 const Login = () => {
   return (
     <>
@@ -12,8 +13,8 @@ const Login = () => {
         </nav>
       </header>
       <main>
-        <section className='formLogin'>
-          <form action=''>
+        <section className='containeFormLogin'>
+          <form action='' className='formLogin'>
             <h3>Inicio de sesion</h3>
             <div>
               <label htmlFor=''>Usuario</label>
@@ -21,9 +22,9 @@ const Login = () => {
             </div>
             <div>
               <label htmlFor=''>Contraseña</label>
-              <input type='text' />
+              <input type='password' />
             </div>
-            <div>
+            <div className='containerButton'>
               <button>Login</button>
               <button>Volver</button>
             </div>

@@ -1,0 +1,42 @@
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+
+}
+.containeFormLogin{
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    gap: 30px;
+}
+div{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    gap: 10px;
+}
+.containerButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.containerButton button{
+    border-style: none;
+    padding: 10px 30px;
+    background-color: rgb(83, 83, 83);
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.formLogin{
+    width: 100%;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+input{
+    height: 35px;
+}
