@@ -1,3 +1,7 @@
+main{
+    position: initial;
+    margin-top: 100px;
+}
 ul{
     list-style: none;
     margin: 10;
@@ -7,12 +11,33 @@ ul{
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     width: 80%;
 }
-img{
+.listProducts img{
     width: 260px;
+    height: 300px;
 }
 section{
     display: flex;
-   flex-wrap: wrap;
-   padding: 30px;
-   justify-content: center;
+    padding: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+.listProducts a{
+    color: black;
+}
+.listProducts li{
+    padding: 10px;
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.listProducts p{
+padding-top: 10px;
+font-weight: 400;
+}
+#imgShoppingCart{
+    width: 30px;
+    height: 30px;
 }

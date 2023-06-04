@@ -1,16 +1,29 @@
 /* eslint-disable react/prop-types */
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useState } from 'react'
 
 const ProductsContext = createContext()
 
 const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([])
   const [search, setSearch] = useState('')
+  const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
+  const changeLoading = () => {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 1000)
+  }
   const data = {
     products,
     setProducts,
     search,
-    setSearch
+    setSearch,
+    isLoading,
+    setIsLoading,
+    changeLoading,
+    error,
+    setError
+
   }
   return (
     <ProductsContext.Provider value={data}>

@@ -12,7 +12,7 @@ const Login = () => {
           </Link>
         </nav>
       </header>
-      <main>
+      <main className='containerLogin'>
         <section className='containeFormLogin'>
           <form action='' className='formLogin'>
             <h3>Inicio de sesion</h3>
@@ -26,7 +26,10 @@ const Login = () => {
             </div>
             <div className='containerButton'>
               <button>Login</button>
-              <button>Volver</button>
+              <Link to='/'>
+                <button>Volver</button>
+              </Link>
+
             </div>
           </form>
         </section>

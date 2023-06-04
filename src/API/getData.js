@@ -4,13 +4,14 @@ const Product = 'https://api.escuelajs.co/api/v1/products'
 const Categories = 'https://api.escuelajs.co/api/v1/categories'
 
 const GetAllProduct = (id) => {
-  const { search } = useProductContext()
+  const { search, changeLoading, setError } = useProductContext()
   const [products, setProducts] = useState([])
 
   const url = () => {
     if (!id && !search) {
       return (Product)
     } else if (id) {
+      setError('')
       return (`${Product}/?categoryId=${id}`)
     } else {
       return (`${Product}/?title=${search}`)
@@ -19,7 +20,13 @@ const GetAllProduct = (id) => {
   useEffect(() => {
     fetch(url())
       .then(res => res.json())
-      .then(data => setProducts(data))
+      .then(data => {
+        if (data.length === 0) {
+          setError('No se encontraron resultados, busque otro producto')
+        } else { setProducts(data) }
+      }
+      )
+    changeLoading()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, search])
   return products

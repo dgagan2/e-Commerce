@@ -1,9 +1,8 @@
-main{
+.containerLogin{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 80%;
-
 }
 .containeFormLogin{
     width: 400px;
@@ -39,4 +38,15 @@ div{
 }
 input{
     height: 35px;
+}
+#root{
+    bottom: 0px;
+    top: 0;
+    left: 0px;
+    right: 0px;
+    position: absolute;
+}
+a{
+    text-decoration: none;
+    color: white;
 }

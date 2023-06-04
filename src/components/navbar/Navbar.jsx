@@ -3,12 +3,11 @@ import logo from '@/assets/logo.png'
 import buscar from '@/assets/buscar.png'
 import '@/components/navbar/Navbar.css'
 import UserLoggedIn from './UserLoggedIn'
-import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useProductContext } from '@/hooks/UseProductContext'
+import { Link } from 'react-router-dom'
 const Navbar = () => {
-  const [error, setError] = useState('')
-  const { setSearch } = useProductContext()
+  const { setSearch, setError, error } = useProductContext()
   const [localValue, setLocalValue] = useState('')
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -16,28 +15,30 @@ const Navbar = () => {
       setError('El campo no puede estar vacio')
       return
     }
-    if (localValue.length > 3) {
+    if (localValue.length > 1) {
       setError('')
       setSearch(localValue)
+      setLocalValue('')
       return
     }
     if (error.length > 0) {
-      setSearch('')
+      setLocalValue('')
     }
   }
   return (
     <nav>
-      <Link to='/'>
+      <a href='/'>
         <img src={logo} id='logo' />
-      </Link>
+      </a>
       <div className='sectionSearch'>
         <DropdownCategories />
         <form className='formSearch' onSubmit={handleSubmit}>
           <input type='text' placeholder='Busca tu producto' name='search' id='search' value={localValue} onChange={(event) => setLocalValue(event.target.value)} />
           <button className='searchButton' onClick={handleSubmit}>
-            <img src={buscar} />
+            <Link to='/'>
+              <img src={buscar} />
+            </Link>
           </button>
-
         </form>
       </div>
 

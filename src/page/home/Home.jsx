@@ -1,24 +1,25 @@
-import { GetAllProduct } from '@/API/getData'
 import Navbar from '@/components/navbar/Navbar'
 import './Home.css'
+import Loading from '@/components/isLoading/Loading'
+import ListProducts from '../../components/home/ListProducts'
+import { useProductContext } from '@/hooks/UseProductContext'
+import { GetAllProduct } from '@/API/getData'
 import { useParams } from 'react-router'
 const Home = () => {
   const { id } = useParams('')
   const newProducts = GetAllProduct(id)
+  const { isLoading } = useProductContext()
   return (
     <>
-      <Navbar />
-      <section>
-        <ul>
-          {newProducts.map((product) => (
-            <li key={product.id}>
-              <img src={product?.images[0]} alt='' />
-              <p>{product.title}</p>
-              <b>$ {product.price}</b>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        {isLoading
+          ? <Loading />
+          : <ListProducts newProducts={newProducts} />}
+      </main>
+
     </>
 
   )
