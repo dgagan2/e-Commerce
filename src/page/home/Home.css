@@ -2,7 +2,7 @@ main{
     position: initial;
     margin-top: 100px;
 }
-ul{
+.listProducts ul{
     list-style: none;
     margin: 10;
     padding: 10;

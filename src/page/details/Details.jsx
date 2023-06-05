@@ -21,7 +21,7 @@ const Details = () => {
             <article>
               <div>
                 {product.images.map((image, index) => (
-                  <img style={{ width: '100px' }} key={index} src={image} alt={`Image ${index}`} />
+                  <img style={{ width: '100px' }} key={index} src={image} alt={`Image ${index}`} onClick={() => setSelectedImage(image)} />
                 ))}
               </div>
               <div>
