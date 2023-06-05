@@ -18,7 +18,7 @@ const ListProducts = ({ newProducts }) => {
             <p>{product.description}</p>
             <b>$ {product.price}</b>
             <div className='d-flex flex-row justify-content-evenly align-items-center'>
-              <Link>Ver detalles</Link>
+              <Link to={`/details/${product.id}`}>Ver detalles</Link>
               <button style={{ borderStyle: 'none', backgroundColor: 'transparent' }}>
                 <img id='imgShoppingCart' src={addCarrito} />
               </button>

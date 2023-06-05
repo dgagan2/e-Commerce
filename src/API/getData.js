@@ -41,4 +41,4 @@ const GetAllCategories = () => {
   }, [])
   return categories
 }
-export { GetAllProduct, GetAllCategories }
+export { GetAllProduct, GetAllCategories, Product }

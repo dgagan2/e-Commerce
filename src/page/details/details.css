@@ -1,0 +1,18 @@
+button{
+    width: 150px;
+    font-size: small;
+    border-radius: 20px;
+    height: 35px;
+    border-style: none;
+}
+.containerButtons{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+select{
+    width: 70px;
+    border-radius: 20px;
+    height: 25px;
+    text-align: center;
+}

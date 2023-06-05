@@ -15,7 +15,7 @@ ul{
     width: 260px;
     height: 300px;
 }
-section{
+.listProducts{
     display: flex;
     padding: 30px;
     justify-content: center;
