@@ -11,7 +11,6 @@ const ListProducts = ({ newProducts }) => {
   const totalProducts = newProducts.length
   const lastIndex = currentPage * productsByPage
   const firstIndez = lastIndex - productsByPage
-  console.log(lastIndex, firstIndez)
   return (
     <>
       <section className='listProducts'>
