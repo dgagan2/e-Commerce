@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <>
       <header>
-        <nav>
+        <nav className='navLogin'>
           <Link to='/'>
             <img src={logo} id='logo' />
           </Link>
@@ -14,7 +14,7 @@ const Login = () => {
       </header>
       <main className='containerLogin'>
         <section className='containeFormLogin'>
-          <form action='' className='formLogin'>
+          <form className='formLogin'>
             <h3>Inicio de sesion</h3>
             <div>
               <label htmlFor=''>Usuario</label>
@@ -26,9 +26,8 @@ const Login = () => {
             </div>
             <div className='containerButton'>
               <button>Login</button>
-              <Link to='/'>
-                <button>Volver</button>
-              </Link>
+              <button> <Link to='/'>volver</Link>
+              </button>
 
             </div>
           </form>

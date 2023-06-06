@@ -9,10 +9,20 @@
     gap: 10px;
     display: flex;
     flex-direction: column;
+    padding: 30px;
 }
 select{
     width: 70px;
     border-radius: 20px;
     height: 25px;
     text-align: center;
+}
+.viewDetailsProducts div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.viewDetailsProducts article{
+    max-width: 800px;
 }

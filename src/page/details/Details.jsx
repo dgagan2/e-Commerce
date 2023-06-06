@@ -17,15 +17,15 @@ const Details = () => {
       <Navbar />
       {productDetails.map((product) => (
         <main key={product.id} className='d-flex justify-content-center' style={{ padding: '0px 100px 0px 100px' }}>
-          <section>
-            <article>
-              <div>
+          <section className='viewDetailsProducts d-flex flex-column' style={{ gap: '50px' }}>
+            <article className='d-flex' style={{ borderStyle: 'groove', padding: '30px' }}>
+              <div className='d-flex'>
                 {product.images.map((image, index) => (
                   <img style={{ width: '100px' }} key={index} src={image} alt={`Image ${index}`} onClick={() => setSelectedImage(image)} />
                 ))}
               </div>
-              <div>
-                <img src={selectedImage} alt='' />
+              <div style={{ width: '70%' }}>
+                <img style={{ width: '350px' }} src={selectedImage} alt='' />
               </div>
             </article>
             <article>

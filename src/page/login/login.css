@@ -4,13 +4,18 @@
     justify-content: center;
     height: 80%;
 }
+.navLogin{
+    background-color: rgb(83, 83, 83);
+    display: flex;
+    justify-content: center;
+}
 .containeFormLogin{
     width: 400px;
     height: 400px;
     text-align: center;
     gap: 30px;
 }
-div{
+.formLogin div{
     display: flex;
     flex-direction: column;
     text-align: start;

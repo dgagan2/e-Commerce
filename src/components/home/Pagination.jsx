@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 
 const Pagination = ({ productsByPage, currentPage, setCurrentePage, totalProducts }) => {
@@ -17,7 +18,7 @@ const Pagination = ({ productsByPage, currentPage, setCurrentePage, totalProduct
 
   return (
     <>
-      <nav aria-label='...'>
+      <nav aria-label='pagination' style={{ paddingBottom: '30px' }}>
         <ul className='pagination justify-content-center'>
           <li className={`page-item ${currentPage === 1 ? 'disabled' : 'active'}`}>
             <a className='page-link bg-dark text-light' onClick={onPreviusPage} tabIndex='-1'>Anterior</a>
