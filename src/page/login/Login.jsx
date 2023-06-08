@@ -26,9 +26,10 @@ const Login = () => {
             </div>
             <div className='containerButton'>
               <button>Login</button>
-              <button> <Link to='/'>volver</Link>
+              <button>
+                <Link to='/'>volver</Link>
               </button>
-
+              <Link to='/signup'>Crea tu cuenta</Link>
             </div>
           </form>
         </section>
