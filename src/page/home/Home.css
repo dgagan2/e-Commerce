@@ -41,3 +41,17 @@ font-weight: 400;
     width: 30px;
     height: 30px;
 }
+.page-link.active, .active>.page-link{
+    border-color: black !important;
+}
+.pagination{
+    --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgb(0 0 0 / 63%) !important;
+}
+.page-item .active{
+    background-color: brown;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

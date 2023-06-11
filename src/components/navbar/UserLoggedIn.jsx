@@ -19,7 +19,7 @@ const UserLoggedIn = () => {
           </div>
           )
         : (
-          <NavLink id='buttonLogin' to='/login/'>
+          <NavLink id='buttonLogin' to='/login/' style={{ color: 'white' }}>
             <img src={user} />
             Login
           </NavLink>

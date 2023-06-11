@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { useProductContext } from '../hooks/UseProductContext'
 const Product = 'https://api.escuelajs.co/api/v1/products'
 const Categories = 'https://api.escuelajs.co/api/v1/categories'
-const User = 'https://api.escuelajs.co/api/v1/users/'
 
 const GetAllProduct = (id) => {
   const { search, changeLoading, setError } = useProductContext()
@@ -42,13 +41,5 @@ const GetAllCategories = () => {
   }, [])
   return categories
 }
-const GetUser = (id) => {
-  const [user, setUser] = useState([])
-  useEffect(() => {
-    fetch(`${User}${id}`)
-      .then(res => res.json()
-        .then(data => setUser(data)))
-  }, [id])
-  return user
-}
-export { GetAllProduct, GetAllCategories, Product, GetUser }
+
+export { GetAllProduct, GetAllCategories, Product }

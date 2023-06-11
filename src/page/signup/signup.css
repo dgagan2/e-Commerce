@@ -1,0 +1,42 @@
+.containerSignup{
+display: flex;
+justify-content: center;
+text-align: center;
+margin-top: 180px;
+}
+.signupFormFields{
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.col-md-12{text-align: start;}
+.formSignup{
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    min-width: 340px;
+    align-items: stretch;
+}
+.signupFormFields h2{
+    padding-bottom: 20px;
+}
+.signupFormButtons{
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+}
+.signupFormButtons button{
+    width: 115px;
+    height: 40px;
+    border-radius: 15px;
+    border-style: none;
+    background-color: rgb(83, 83, 83);
+    color: white;
+    font-weight: 600;
+}
+.errores{
+    color: red;
+    padding-top: 3px;
+    margin-bottom: 0px;
+}

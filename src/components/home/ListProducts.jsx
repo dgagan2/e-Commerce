@@ -6,7 +6,7 @@ import addCarrito from '@/assets/icon.png'
 import Pagination from './Pagination'
 const ListProducts = ({ newProducts }) => {
   const { error } = useProductContext()
-  const [productsByPage, setProductsByPage] = useState(12)
+  const [productsByPage, setProductsByPage] = useState(15)
   const [currentPage, setCurrentePage] = useState(1)
   const totalProducts = newProducts.length
   const lastIndex = currentPage * productsByPage

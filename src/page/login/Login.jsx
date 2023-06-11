@@ -15,7 +15,7 @@ const Login = () => {
       <main className='containerLogin'>
         <section className='containeFormLogin'>
           <form className='formLogin'>
-            <h3>Inicio de sesion</h3>
+            <h2>Inicio de sesión</h2>
             <div>
               <label htmlFor=''>Usuario</label>
               <input type='text' />
@@ -27,9 +27,9 @@ const Login = () => {
             <div className='containerButton'>
               <button>Login</button>
               <button>
-                <Link to='/'>volver</Link>
+                <Link style={{ color: 'white' }} to='/'>Volver</Link>
               </button>
-              <Link to='/signup'>Crea tu cuenta</Link>
+              <Link style={{ color: 'black', textAlign: 'center' }} to='/signup'>Crea tu cuenta</Link>
             </div>
           </form>
         </section>

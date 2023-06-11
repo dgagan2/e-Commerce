@@ -3,7 +3,7 @@ import './Home.css'
 import Loading from '@/components/isLoading/Loading'
 import ListProducts from '../../components/home/ListProducts'
 import { useProductContext } from '@/hooks/UseProductContext'
-import { GetAllProduct } from '@/API/getData'
+import { GetAllProduct } from '@/services/API'
 import { useParams } from 'react-router'
 const Home = () => {
   const { id } = useParams('')

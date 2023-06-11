@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import { Product } from '../../API/getData'
+import { Product } from '@/services/API'
 import '../details/details.css'
 import Navbar from '../../components/navbar/Navbar'
 const Details = () => {
