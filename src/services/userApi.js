@@ -3,14 +3,18 @@ const registrerUser = async (user) => {
   try {
     const response = await fetch(User, {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(user)
-    })
+    }
+    )
     if (response.ok) {
-      const jsonResponse = await response.json()
-      console.log(jsonResponse)
+      return response
     }
   } catch (error) {
-    console.error(error)
+    console.error(error, 'error')
+    return error
   }
 }
 

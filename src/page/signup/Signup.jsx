@@ -1,21 +1,37 @@
 import React, { useState } from 'react'
 import useForm from '../../hooks/useForm'
 import logo from '@/assets/logo.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { registrerUser } from '../../services/userApi'
-
+import validateForm from './validateForm'
+import Swal from 'sweetalert2'
 import './signup.css'
 const Signup = () => {
+  const [errorsRegitrerUser, setErrorsRegitrerUser] = useState({})
+  const navigate = useNavigate()
   const sendData = async (data) => {
-    const newErros = errorsRegitrerUser
+    const newErros = validateForm(input)
+    setErrorsRegitrerUser(newErros)
     if (Object.keys(newErros).length === 0) {
-      registrerUser(data)
-      console.log('mo erros')
-    } else {
-      console.log('Si erros')
-    }
+     try {
+      const response = await registrerUser(data)
+      if(response.status === 201){
+        Swal.fire({
+          icon:'success',
+          title:'Usuario creado',
+          color:'rgb(83, 83, 83)'
+        }
+        )
+        navigate('/login')
+      }
+     } catch (error) {
+      Swal.fire({
+        icon:'error',
+        html:`El usuario no se ha creado ${error}`
+      })
+     }}
   }
-  const { input, handleSubmit, handleInputChange, errorsRegitrerUser } = useForm(sendData, {
+  const { input, handleSubmit, handleInputChange } = useForm(sendData, {
     email: '',
     password: '',
     name: '',
