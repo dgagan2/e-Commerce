@@ -6,7 +6,6 @@ const Categories = 'https://api.escuelajs.co/api/v1/categories'
 const GetAllProduct = (id) => {
   const { search, changeLoading, setError } = useProductContext()
   const [products, setProducts] = useState([])
-
   const url = () => {
     if (!id && !search) {
       return (Product)

@@ -4,6 +4,7 @@ import { useProductContext } from '@/hooks/UseProductContext'
 import { Link } from 'react-router-dom'
 import addCarrito from '@/assets/icon.png'
 import Pagination from './Pagination'
+
 const ListProducts = ({ newProducts }) => {
   const { error } = useProductContext()
   const [productsByPage, setProductsByPage] = useState(15)

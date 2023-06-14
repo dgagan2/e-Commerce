@@ -4,6 +4,7 @@ import Login from '@/page/login/Login'
 import Details from '../page/details/Details'
 import NotFound from '../page/NotFound'
 import Signup from '../page/signup/Signup'
+import ShoppingList from '../page/shoppingList/ShoppingList'
 
 const RoutesIndex = () => {
   return (
@@ -11,8 +12,10 @@ const RoutesIndex = () => {
       <Route path='/' element={<Home />} />
       <Route path='/login/' element={<Login />} />
       <Route path='/:id' element={<Home />} />
+      <Route path='/product/:product' element={<Home />} />
       <Route path='/details/:id' element={<Details />} />
       <Route path='/signup' element={<Signup />} />
+      <Route path='/shopping' element={<ShoppingList />} />
       <Route path='/error' element={<NotFound />} />
     </Routes>
   )

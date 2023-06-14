@@ -13,23 +13,24 @@ const Signup = () => {
     const newErros = validateForm(input)
     setErrorsRegitrerUser(newErros)
     if (Object.keys(newErros).length === 0) {
-     try {
-      const response = await registrerUser(data)
-      if(response.status === 201){
-        Swal.fire({
-          icon:'success',
-          title:'Usuario creado',
-          color:'rgb(83, 83, 83)'
+      try {
+        const response = await registrerUser(data)
+        if (response.status === 201) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Usuario creado',
+            color: 'rgb(83, 83, 83)'
+          }
+          )
+          navigate('/login')
         }
-        )
-        navigate('/login')
+      } catch (error) {
+        Swal.fire({
+          icon: 'error',
+          html: `El usuario no se ha creado ${error}`
+        })
       }
-     } catch (error) {
-      Swal.fire({
-        icon:'error',
-        html:`El usuario no se ha creado ${error}`
-      })
-     }}
+    }
   }
   const { input, handleSubmit, handleInputChange } = useForm(sendData, {
     email: '',

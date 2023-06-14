@@ -8,6 +8,8 @@ const ProductProvider = ({ children }) => {
   const [search, setSearch] = useState('')
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(true)
+  const [isLoggin, setIsLoggin] = useState(false)
+  const [shoppingList, setShoppingList] = useState([])
   const changeLoading = () => {
     setTimeout(() => {
       setIsLoading(false)
@@ -22,8 +24,11 @@ const ProductProvider = ({ children }) => {
     setIsLoading,
     changeLoading,
     error,
-    setError
-
+    setError,
+    isLoggin,
+    setIsLoggin,
+    shoppingList,
+    setShoppingList
   }
   return (
     <ProductsContext.Provider value={data}>

@@ -1,4 +1,7 @@
+import axios from 'axios'
+
 const User = 'https://api.escuelajs.co/api/v1/users/'
+const Login = 'https://api.escuelajs.co/api/v1/auth/login'
 const registrerUser = async (user) => {
   try {
     const response = await fetch(User, {
@@ -13,9 +16,8 @@ const registrerUser = async (user) => {
       return response
     }
   } catch (error) {
-    console.error(error, 'error')
     return error
   }
 }
-
-export { registrerUser }
+const LoginJWT = (data) => axios.post(`${Login}`, data)
+export { registrerUser, LoginJWT }

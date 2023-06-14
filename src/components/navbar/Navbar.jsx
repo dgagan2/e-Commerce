@@ -27,15 +27,21 @@ const Navbar = () => {
   }
   return (
     <nav className='navHeader'>
-      <a href='/'>
+      <Link to='/' onClick={(event) => setSearch('')}>
         <img src={logo} id='logo' />
-      </a>
+      </Link>
       <div className='sectionSearch'>
         <DropdownCategories />
         <form className='formSearch' onSubmit={handleSubmit}>
-          <input type='text' placeholder='Busca tu producto' name='search' id='search' value={localValue} onChange={(event) => setLocalValue(event.target.value)} />
+          <input
+            type='text' placeholder='Busca tu producto'
+            name='search'
+            id='search'
+            value={localValue}
+            onChange={(event) => setLocalValue(event.target.value)}
+          />
           <button className='searchButton' onClick={handleSubmit}>
-            <Link to='/'>
+            <Link to={`/product/${localValue}`}>
               <img src={buscar} />
             </Link>
           </button>

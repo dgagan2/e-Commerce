@@ -33,7 +33,7 @@ nav button{
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 70%;
+    width: 50%;
     flex-direction: row;
 }
 
@@ -42,7 +42,7 @@ nav button{
     color: white;
 }
 #buttonLogin img, #buttonCartIcon img{
-    width: 40px;
+    width: 35px;
 }
 #buttonLogin img, .searchButton img, #buttonCartIcon img{
     filter: invert(1);

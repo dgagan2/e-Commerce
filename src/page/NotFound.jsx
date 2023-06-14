@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const NotFound = () => {
   return (
     <>
-      <div className='d-flex align-items-center'>
+      <div className='d-flex align-items-center flex-column'>
         <img style={{ width: '700px' }} src={notFound} />
         <button style={{ borderStyle: 'none', backgroundColor: 'rgb(83, 83, 83)', padding: '10px' }}>
           <Link to='/'>Go to home page</Link>

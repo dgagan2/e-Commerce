@@ -50,8 +50,39 @@ font-weight: 400;
 .page-item .active{
     background-color: brown;
 }
+.pagination{
+    display: flex;
+flex-wrap: wrap;
+}
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
 }
+@media (max-width: 730px) {
+   .navHeader{
+    flex-direction: column;
+    gap: 5px;
+   }
+   main{
+    margin-top: 170px;
+   }
+   .sectionSearch{
+    width: 100%;
+   }
+}
+@media (max-width: 540px) {
+   .sectionSearch{
+    flex-direction: column;
+   }
+   .formSearch{
+    display: flex;
+    justify-content: center;
+   }
+   main{
+    margin-top: 200px;
+   }
+   .navHeader{
+    padding-bottom: 20px;
+   }
+ }
