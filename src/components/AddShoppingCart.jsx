@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 const AddShoppingCart = (product) => {
   const { setShoppingList, isLoggin } = useProductContext()
   const navigate = useNavigate()
-  console.log('hola')
   return (
     <>
       {isLoggin

@@ -5,10 +5,11 @@ import useForm from '../../hooks/useForm'
 import '@/page/login/login.css'
 import { LoginJWT } from '../../services/userApi'
 import validateLogin from './validateLogin'
-import { useProductContext } from '@/hooks/UseProductContext'
+import { useUserContext } from '../../hooks/UseUserContext'
 const Login = () => {
-  const { setIsLoggin } = useProductContext()
   const [errorsLogin, setErrorsLogin] = useState({})
+  const [unauthorizedLogin, setUnauthorizedLogin] = useState('')
+  const { login } = useUserContext()
   const navigateHome = useNavigate()
   const sendData = async (data) => {
     const newErros = validateLogin(input)
@@ -18,11 +19,16 @@ const Login = () => {
         const response = await LoginJWT(input)
         if (response.status === 201) {
           localStorage.setItem('token', response.data.access_token)
-          setIsLoggin(true)
+          login(response.data.access_token)
+          setUnauthorizedLogin('')
           navigateHome('/')
         }
       } catch (error) {
-        console.log(error)
+        if (error.status === 401) {
+          setUnauthorizedLogin('Usuario o contraseña incorrectos')
+        } else {
+          setUnauthorizedLogin(error.response)
+        }
       }
     }
   }
@@ -65,6 +71,7 @@ const Login = () => {
               />
               {errorsLogin.password && <p>{errorsLogin.password}</p>}
             </div>
+            {unauthorizedLogin && <p style={{ color: 'red' }}>{unauthorizedLogin}</p>}
             <div className='containerButton'>
               <button>Login</button>
               <button>
@@ -72,6 +79,7 @@ const Login = () => {
               </button>
               <Link style={{ color: 'black', textAlign: 'center' }} to='/signup'>Crea tu cuenta</Link>
             </div>
+
           </form>
         </section>
       </main>

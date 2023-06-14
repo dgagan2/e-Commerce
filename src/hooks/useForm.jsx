@@ -13,7 +13,6 @@ function useForm (callback, defaults) {
   // Función que se ejecuta al teclear en un input
   const handleInputChange = (event) => {
     const { name, value } = event.target
-    // console.log(name, value)
     setInput({ ...input, [name]: value })
   }
 

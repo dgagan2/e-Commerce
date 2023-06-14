@@ -8,7 +8,6 @@ const ProductProvider = ({ children }) => {
   const [search, setSearch] = useState('')
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(true)
-  const [isLoggin, setIsLoggin] = useState(false)
   const [shoppingList, setShoppingList] = useState([])
   const changeLoading = () => {
     setTimeout(() => {
@@ -25,8 +24,6 @@ const ProductProvider = ({ children }) => {
     changeLoading,
     error,
     setError,
-    isLoggin,
-    setIsLoggin,
     shoppingList,
     setShoppingList
   }

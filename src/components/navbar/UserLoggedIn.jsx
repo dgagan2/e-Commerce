@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import DropdownUser from './DropdownUser'
 import carrito from '@/assets/carrito.png'
 import user from '@/assets/user.png'
-import { NavLink, useNavigate } from 'react-router-dom'
-import { useProductContext } from '@/hooks/UseProductContext'
+import { NavLink } from 'react-router-dom'
+import { useUserContext } from '../../hooks/UseUserContext'
 const UserLoggedIn = () => {
-  const { isLoggin } = useProductContext()
-  const navigate = useNavigate()
+  const { isLoggin } = useUserContext()
   return (
     <section className='userLoggedIn'>
       {isLoggin
