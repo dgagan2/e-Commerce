@@ -1,7 +1,8 @@
 import React from 'react'
 import { useUserContext } from '../../hooks/UseUserContext'
+import { Link } from 'react-router-dom'
 const DropdownUser = () => {
-  const { userPayload } = useUserContext()
+  const { userPayload, logout } = useUserContext()
   return (
     <>
       <div className='dropdown'>
@@ -9,9 +10,7 @@ const DropdownUser = () => {
           User
         </button>
         <ul className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
-          <li><a className='dropdown-item' href='#'>Action</a></li>
-          <li><a className='dropdown-item' href='#'>Another action</a></li>
-          <li><a className='dropdown-item' href='#'>Salir</a></li>
+          <li><Link className='dropdown-item' to='/' onClick={logout}>Salir</Link></li>
         </ul>
       </div>
 

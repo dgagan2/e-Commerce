@@ -21,6 +21,11 @@
     text-align: start;
     gap: 10px;
 }
+
+.formLogin p{
+    margin-bottom: 0px;
+    color: red;
+}
 .containerButton{
     display: flex;
     flex-direction: row;

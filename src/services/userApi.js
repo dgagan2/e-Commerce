@@ -2,6 +2,7 @@ import axios from 'axios'
 
 const User = 'https://api.escuelajs.co/api/v1/users/'
 const Login = 'https://api.escuelajs.co/api/v1/auth/login'
+const Profile = 'https://api.escuelajs.co/api/v1/auth/profile'
 const registrerUser = async (user) => {
   try {
     const response = await fetch(User, {
@@ -20,4 +21,5 @@ const registrerUser = async (user) => {
   }
 }
 const LoginJWT = (data) => axios.post(`${Login}`, data)
-export { registrerUser, LoginJWT }
+const getProfile = (token) => axios.get(`${Profile}`, { headers: { Authorization: 'Bearer ' + token } })
+export { registrerUser, LoginJWT, getProfile }

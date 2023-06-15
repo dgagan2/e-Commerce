@@ -1,19 +1,16 @@
 import React from 'react'
 import { useProductContext } from '@/hooks/UseProductContext'
 import Navbar from '@/components/navbar/Navbar'
-import NotFound from '../NotFound'
 const ShoppingList = () => {
-  const { shoppingList, isLoggin } = useProductContext()
+  const { shoppingList } = useProductContext()
   return (
     <>
-      {
-        isLoggin
-          ? (
-            <Navbar />
-            )
-          : <NotFound />
-    }
-
+      <Navbar />
+      {shoppingList.map((product) => (
+        <ul key={product.id}>
+          <li>{product.title}</li>
+        </ul>
+      ))}
     </>
   )
 }

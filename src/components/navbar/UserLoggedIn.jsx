@@ -2,17 +2,19 @@ import React from 'react'
 import DropdownUser from './DropdownUser'
 import carrito from '@/assets/carrito.png'
 import user from '@/assets/user.png'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { useUserContext } from '../../hooks/UseUserContext'
 const UserLoggedIn = () => {
   const { isLoggin } = useUserContext()
+  const navigate = useNavigate()
+
   return (
     <section className='userLoggedIn'>
       {isLoggin
         ? (
           <div className='dropdownUser'>
             <DropdownUser />
-            <button id='buttonCartIcon'>
+            <button id='buttonCartIcon' onClick={() => navigate('/shopping')}>
               <img src={carrito} alt='' />
               Carrito
             </button>

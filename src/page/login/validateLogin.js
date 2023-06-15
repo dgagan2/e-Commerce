@@ -6,10 +6,10 @@ const expresiones = {
 const validateLogin = (input) => {
   const errors = {}
   if (!input.email.trim()) {
-    errors.email = 'El campo email es requerido'
+    errors.email = 'El campo usuario es requerido'
   } else {
     if (!expresiones.txtEmail.test(input.email)) {
-      errors.email = 'Correo no valido'
+      errors.email = 'Usuario no valido'
     }
   }
   if (!input.password.trim()) {
