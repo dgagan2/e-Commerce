@@ -3,10 +3,36 @@ import { useParams } from 'react-router'
 import { Product } from '@/services/API'
 import '../details/details.css'
 import Navbar from '../../components/navbar/Navbar'
+import { useUserContext } from '@/hooks/UseUserContext'
+import { useProductContext } from '@/hooks/UseProductContext'
+import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 const Details = () => {
+  const { setShoppingList, shoppingList } = useProductContext()
+  const { isLoggin } = useUserContext()
+  const navigate = useNavigate()
   const { id } = useParams('')
   const [productDetails, setProductDetails] = useState([])
   const [selectedImage, setSelectedImage] = useState()
+  const AddShoppingCart = (product) => {
+    if (isLoggin === true) {
+      setShoppingList([...shoppingList, product])
+      Swal.fire({
+        icon: 'success',
+        title: 'Producto agregado'
+      })
+    } else {
+      navigate('/login')
+    }
+  }
+  const buy = (product) => {
+    if (isLoggin === true) {
+      setShoppingList([...shoppingList, product])
+      navigate('/shopping')
+    } else {
+      navigate('/login')
+    }
+  }
   useEffect(() => {
     fetch(`${Product}/${id}`)
       .then(res => res.json())
@@ -46,8 +72,8 @@ const Details = () => {
                 <option value='5'>5</option>
               </select>
             </div>
-            <button>Agregar al Carrito</button>
-            <button>Comprar Ahora</button>
+            <button onClick={() => AddShoppingCart(product)}>Agregar al Carrito</button>
+            <button onClick={() => buy(product)}>Comprar Ahora</button>
           </section>
         </main>
 

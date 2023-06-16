@@ -4,8 +4,7 @@ const Product = 'https://api.escuelajs.co/api/v1/products'
 const Categories = 'https://api.escuelajs.co/api/v1/categories'
 
 const GetAllProduct = (id) => {
-  const { search, changeLoading, setError } = useProductContext()
-  const [products, setProducts] = useState([])
+  const { search, changeLoading, setError, products, setProducts } = useProductContext()
   const url = () => {
     if (!id && !search) {
       return (Product)

@@ -1,7 +1,7 @@
 import Navbar from '@/components/navbar/Navbar'
 import './Home.css'
 import Loading from '@/components/isLoading/Loading'
-import ListProducts from '../../components/home/ListProducts'
+import ListProductsHome from '../../components/home/ListProducts'
 import { useProductContext } from '@/hooks/UseProductContext'
 import { GetAllProduct } from '@/services/API'
 import { useParams } from 'react-router'
@@ -17,7 +17,7 @@ const Home = () => {
       <main>
         {isLoading
           ? <Loading />
-          : <ListProducts newProducts={newProducts} />}
+          : <ListProductsHome newProducts={newProducts} />}
       </main>
 
     </>

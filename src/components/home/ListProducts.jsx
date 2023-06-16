@@ -5,8 +5,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import addCarrito from '@/assets/icon.png'
 import Pagination from './Pagination'
 import { useUserContext } from '../../hooks/UseUserContext'
-
-const ListProducts = ({ newProducts }) => {
+import Swal from 'sweetalert2'
+const ListProductsHome = ({ newProducts }) => {
   const { error, setShoppingList, shoppingList } = useProductContext()
   const [productsByPage, setProductsByPage] = useState(15)
   const [currentPage, setCurrentePage] = useState(1)
@@ -18,6 +18,10 @@ const ListProducts = ({ newProducts }) => {
   const AddShoppingCart = (product) => {
     if (isLoggin === true) {
       setShoppingList([...shoppingList, product])
+      Swal.fire({
+        icon: 'success',
+        title: 'Producto agregado'
+      })
     } else {
       navigate('/login')
     }
@@ -56,4 +60,4 @@ const ListProducts = ({ newProducts }) => {
   )
 }
 
-export default ListProducts
+export default ListProductsHome
