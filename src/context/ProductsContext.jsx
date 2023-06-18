@@ -9,6 +9,7 @@ const ProductProvider = ({ children }) => {
   const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(true)
   const [shoppingList, setShoppingList] = useState([])
+  const [selectedOption, setSelectedOption] = useState(1)
   const changeLoading = () => {
     setTimeout(() => {
       setIsLoading(false)
@@ -25,7 +26,9 @@ const ProductProvider = ({ children }) => {
     error,
     setError,
     shoppingList,
-    setShoppingList
+    setShoppingList,
+    selectedOption,
+    setSelectedOption
   }
   return (
     <ProductsContext.Provider value={data}>

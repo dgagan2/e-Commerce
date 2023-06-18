@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useProductContext } from '../hooks/UseProductContext'
+import axios from 'axios'
 const Product = 'https://api.escuelajs.co/api/v1/products'
 const Categories = 'https://api.escuelajs.co/api/v1/categories'
 
@@ -39,5 +40,15 @@ const GetAllCategories = () => {
   }, [])
   return categories
 }
+const AddProduct = (product) => axios.post(`${Product}/`, {
+  title: product.title,
+  price: product.price,
+  description: product.description,
+  categoryId: product.categoryId,
+  images: [product.images]
+})
+const DeleteProduct = (id) => axios.delete(`${Product}/${id}`)
+const GetProductById = (id) => axios.get(`${Product}/${id}`)
+const UpdateProduct = (id, product) => axios.put(`${Product}/${id}`, product)
 
-export { GetAllProduct, GetAllCategories, Product }
+export { GetAllProduct, GetAllCategories, Product, AddProduct, DeleteProduct, GetProductById, UpdateProduct }

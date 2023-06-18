@@ -11,7 +11,7 @@ const DropdownUser = () => {
         </button>
         <ul className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
           {profile.role === 'admin'
-            ? <li><Link className='dropdown-item' to='/inventory'>Administrar Productos</Link></li>
+            ? <li><Link className='dropdown-item' to='/inventory'>Dashboard</Link></li>
             : null}
           <li><Link className='dropdown-item' to='/' onClick={logout}>Salir</Link></li>
         </ul>

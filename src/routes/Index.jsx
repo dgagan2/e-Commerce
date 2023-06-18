@@ -7,8 +7,9 @@ import Signup from '../page/signup/Signup'
 import ShoppingList from '../page/shoppingList/ShoppingList'
 import { useUserContext } from '@/hooks/UseUserContext'
 import ManageProducts from '../page/manageProducts/ManageProducts'
+import EditProduct from '../components/manageProduct/EditProduct'
 const RoutesIndex = () => {
-  const { isLoggin } = useUserContext()
+  const { profile, isLoggin } = useUserContext()
   return (
     <Routes>
       <Route path='/' element={<Home />} />
@@ -31,7 +32,13 @@ const RoutesIndex = () => {
           : <NotFound />}
       />
       <Route
-        path='/inventory' element={isLoggin
+        path='/inventory' element={profile.role === 'admin'
+          ? <ManageProducts />
+          : <NotFound />}
+      />
+      <Route path='/error' element={<NotFound />} />
+      <Route
+        path='/inventory/edit/:id' element={profile.role === 'admin'
           ? <ManageProducts />
           : <NotFound />}
       />

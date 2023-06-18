@@ -1,46 +1,17 @@
-import React, { useState } from 'react'
-import { useProductContext } from '@/hooks/UseProductContext'
+import React from 'react'
+import './manageProducts.css'
 import Navbar from '../../components/navbar/Navbar'
-import { GetAllProduct } from '@/services/API'
-import { useParams } from 'react-router'
-import Pagination from '@/components/home/Pagination'
+import NavbarAdminProducts from '../../components/manageProduct/NavbarAdminProducts'
+import OptionToRender from '../../components/manageProduct/OptionToRender'
+import { useProductContext } from '@/hooks/UseProductContext'
 const ManageProducts = () => {
-  const { products } = useProductContext()
-  const productsByPage = 15
-  const [currentPage, setCurrentePage] = useState(1)
-  const totalProducts = products.length
-  const lastIndex = currentPage * productsByPage
-  const firstIndez = lastIndex - productsByPage
+  const { selectedOption, setSelectedOption } = useProductContext()
+  // const [selectedOption, setSelectedOption] = useState(1)
   return (
     <>
       <Navbar />
-      <section style={{ padding: '70px 40px' }} className='listAddProducts'>
-        <div className='d-flex flex-row containerButtons'>
-          <button>Agregar Productos</button>
-        </div>
-        <ul className=''>
-          {products?.map((product) => (
-            <li key={product.id} style={{ listStyle: 'none' }}>
-              <article className='d-flex'>
-                <div>
-                  <img style={{ width: '110px' }} src={product?.images[0]} />
-                  <div>
-                    <p>{product?.title}</p>
-                    <p>$ {product.price}</p>
-                  </div>
-                </div>
-                <button>Eliminar</button>
-              </article>
-            </li>
-          )).slice(firstIndez, lastIndex)}
-        </ul>
-      </section>
-      <Pagination
-        productsByPage={productsByPage}
-        currentPage={currentPage}
-        setCurrentePage={setCurrentePage}
-        totalProducts={totalProducts}
-      />
+      <NavbarAdminProducts setSelectedOption={setSelectedOption} />
+      <OptionToRender selectedOption={selectedOption} />
     </>
 
   )

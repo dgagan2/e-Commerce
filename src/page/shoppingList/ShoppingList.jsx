@@ -39,10 +39,10 @@ const ShoppingList = () => {
               </li>
             ))}
           </ul>
-          </section>
+        </section>
         : <section className='d-flex flex-column gap-2' style={{ padding: '70px 40px' }}>
           <b>No hay productos agregados al carro de compras, vuelve y seleciona uno </b>
-        </section>}
+          </section>}
 
     </>
   )
