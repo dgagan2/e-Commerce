@@ -24,8 +24,7 @@ const NavbarAdminProducts = ({ setSelectedOption }) => {
                 Categorias
               </Link>
               <ul className='dropdown-menu' aria-labelledby='navbarCategories'>
-                <li><Link className='dropdown-item' to='/inventory' onClick={() => setSelectedOption(4)}>Agregar Categorias</Link></li>
-                <li><Link className='dropdown-item' to='/inventory' onClick={() => setSelectedOption(5)}>Eliminar Categorias</Link></li>
+                <li><Link className='dropdown-item' to='/inventory' onClick={() => setSelectedOption(4)}>Modificar Categorias</Link></li>
               </ul>
             </li>
             <li className='nav-item dropdown'>
@@ -33,9 +32,8 @@ const NavbarAdminProducts = ({ setSelectedOption }) => {
                 Usuarios
               </Link>
               <ul className='dropdown-menu' aria-labelledby='navbarUser'>
-                <li><Link className='dropdown-item'>Action</Link></li>
-                <li><Link className='dropdown-item'>Another action</Link></li>
-                <li><Link className='dropdown-item'>Something else here</Link></li>
+                <li><Link className='dropdown-item' to='/inventory' onClick={() => setSelectedOption(5)}>Modificar Usuarios</Link></li>
+
               </ul>
             </li>
           </ul>

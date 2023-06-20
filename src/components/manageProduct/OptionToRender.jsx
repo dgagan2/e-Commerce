@@ -1,6 +1,7 @@
 import React from 'react'
 import { AddProducts, DeleteProducts } from '@/components/manageProduct/Products'
 import EditProduct from './EditProduct'
+import Categories from './categories/Categories'
 const OptionToRender = ({ selectedOption }) => {
   let componenteRenderizado
   if (selectedOption === 1) {
@@ -10,7 +11,7 @@ const OptionToRender = ({ selectedOption }) => {
   } else if (selectedOption === 3) {
     componenteRenderizado = <EditProduct />
   } else if (selectedOption === 4) {
-    componenteRenderizado = <p>4</p>
+    componenteRenderizado = <Categories />
   } else if (selectedOption === 5) {
     componenteRenderizado = <p>5</p>
   }
