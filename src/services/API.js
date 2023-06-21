@@ -31,15 +31,6 @@ const GetAllProduct = (id) => {
   return products
 }
 
-const GetAllCategories = () => {
-  const [categories, setCategories] = useState([])
-  useEffect(() => {
-    fetch(Categories)
-      .then(res => res.json())
-      .then(data => setCategories(data))
-  }, [])
-  return categories
-}
 const AddProduct = (product) => axios.post(`${Product}/`, {
   title: product.title,
   price: product.price,
@@ -50,5 +41,6 @@ const AddProduct = (product) => axios.post(`${Product}/`, {
 const DeleteProduct = (id) => axios.delete(`${Product}/${id}`)
 const GetProductById = (id) => axios.get(`${Product}/${id}`)
 const UpdateProduct = (id, product) => axios.put(`${Product}/${id}`, product)
+const GetAllCategories = () => axios.get(`${Categories}`)
 
 export { GetAllProduct, GetAllCategories, Product, AddProduct, DeleteProduct, GetProductById, UpdateProduct }

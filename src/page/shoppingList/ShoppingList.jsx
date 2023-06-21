@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-closing-tag-location */
+/* eslint-disable react/jsx-indent */
 import React, { useState } from 'react'
 import { useProductContext } from '@/hooks/UseProductContext'
 import Navbar from '@/components/navbar/Navbar'
@@ -34,15 +36,17 @@ const ShoppingList = () => {
                   <div>
                     <p>{product?.title}</p>
                     <p>$ {product.price}</p>
+                    <input value={product.cantidad} />
                   </div>
+                  <p>$ {product.price * product.cantidad}</p>
                 </article>
               </li>
             ))}
           </ul>
-        </section>
+          </section>
         : <section className='d-flex flex-column gap-2' style={{ padding: '70px 40px' }}>
           <b>No hay productos agregados al carro de compras, vuelve y seleciona uno </b>
-          </section>}
+        </section>}
 
     </>
   )

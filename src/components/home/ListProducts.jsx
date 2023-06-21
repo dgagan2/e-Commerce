@@ -34,15 +34,18 @@ const ListProductsHome = ({ newProducts }) => {
           ? <b className='fs-4 text-center' style={{ padding: '20px' }}>{error}</b>
           : null}
         <ul>
-          {newProducts.map((product) => (
-            <li key={product.id}>
-              <img src={product?.images[0]} alt='' />
-              <p>{product.title}</p>
-              <p>{product.description}</p>
-              <b>$ {product.price}</b>
+          {newProducts.map((p) => (
+            <li key={p.id}>
+              <img src={p?.images[0]} alt='' />
+              <p>{p.title}</p>
+              <p>{p.description}</p>
+              <b>$ {p.price}</b>
               <div className='d-flex flex-row justify-content-evenly align-items-center'>
-                <Link to={`/details/${product.id}`}>Ver detalles</Link>
-                <button style={{ borderStyle: 'none', backgroundColor: 'transparent' }} onClick={() => AddShoppingCart(product)}>
+                <Link to={`/details/${p.id}`}>Ver detalles</Link>
+                <button
+                  style={{ borderStyle: 'none', backgroundColor: 'transparent' }}
+                  onClick={() => AddShoppingCart({ ...p, cantidad: 1 })}
+                >
                   <img id='imgShoppingCart' src={addCarrito} />
                 </button>
               </div>

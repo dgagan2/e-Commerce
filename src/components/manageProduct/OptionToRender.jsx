@@ -2,6 +2,7 @@ import React from 'react'
 import { AddProducts, DeleteProducts } from '@/components/manageProduct/Products'
 import EditProduct from './EditProduct'
 import Categories from './categories/Categories'
+import User from './users/User'
 const OptionToRender = ({ selectedOption }) => {
   let componenteRenderizado
   if (selectedOption === 1) {
@@ -13,7 +14,7 @@ const OptionToRender = ({ selectedOption }) => {
   } else if (selectedOption === 4) {
     componenteRenderizado = <Categories />
   } else if (selectedOption === 5) {
-    componenteRenderizado = <p>5</p>
+    componenteRenderizado = <User />
   }
   return componenteRenderizado
 }

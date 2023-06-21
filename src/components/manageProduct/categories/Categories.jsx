@@ -4,7 +4,7 @@ import { AddCategorie, DeleteCategorie, EditCategorie } from '../../../services/
 import Swal from 'sweetalert2'
 
 const Categories = () => {
-  const { newCategories, setSelectedOption } = useProductContext()
+  const { handleCategories, newCategories } = useProductContext()
   const [dataCategorie, setDataCategorie] = useState([])
   const handleInputChange = (event) => {
     const { name, value } = event.target
@@ -13,7 +13,10 @@ const Categories = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
   }
-
+  const eraseBox = () => {
+    setDataCategorie({ id: '', name: '', image: '' })
+    handleCategories()
+  }
   const handleAdd = async () => {
     try {
       const response = await AddCategorie(dataCategorie)
@@ -24,8 +27,8 @@ const Categories = () => {
           color: 'rgb(83, 83, 83)'
         }
         )
-        setSelectedOption(1)
       }
+      eraseBox()
     } catch (error) {
       Swal.fire({
         icon: 'error',
@@ -43,7 +46,7 @@ const Categories = () => {
           color: 'rgb(83, 83, 83)'
         }
         )
-        setSelectedOption(1)
+        eraseBox()
       }
     } catch (error) {
       Swal.fire({
@@ -62,7 +65,7 @@ const Categories = () => {
           color: 'rgb(83, 83, 83)'
         }
         )
-        setSelectedOption(1)
+        eraseBox()
       }
     } catch (error) {
       Swal.fire({
@@ -112,6 +115,7 @@ const Categories = () => {
           <button onClick={handleAdd}>Agregar</button>
           <button onClick={handleEdit}>Editar</button>
           <button onClick={handleDelete}>Eliminar</button>
+          <button onClick={eraseBox}>Limpiar Campos</button>
         </form>
       </article>
 

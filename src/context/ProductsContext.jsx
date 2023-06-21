@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { GetAllCategories } from '../services/API'
 
 const ProductsContext = createContext()
@@ -11,7 +11,14 @@ const ProductProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true)
   const [shoppingList, setShoppingList] = useState([])
   const [selectedOption, setSelectedOption] = useState(1)
-  const newCategories = GetAllCategories()
+  const [newCategories, setNewCategories] = useState([])
+  const handleCategories = async () => {
+    const response = await GetAllCategories()
+    setNewCategories(response.data)
+  }
+  useEffect(() => {
+    handleCategories()
+  }, [])
   const changeLoading = () => {
     setTimeout(() => {
       setIsLoading(false)
@@ -31,7 +38,8 @@ const ProductProvider = ({ children }) => {
     setShoppingList,
     selectedOption,
     setSelectedOption,
-    newCategories
+    newCategories,
+    handleCategories
   }
   return (
     <ProductsContext.Provider value={data}>

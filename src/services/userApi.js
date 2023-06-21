@@ -22,4 +22,8 @@ const registrerUser = async (user) => {
 }
 const LoginJWT = (data) => axios.post(`${Login}`, data)
 const getProfile = (token) => axios.get(`${Profile}`, { headers: { Authorization: 'Bearer ' + token } })
-export { registrerUser, LoginJWT, getProfile }
+const GetUsers = () => axios.get(`${User}`)
+const EditUser = (user) => axios.put(`${User}${user.id}`, user)
+const DeleteUser = (user) => axios.delete(`${User}${user.id}`)
+
+export { registrerUser, LoginJWT, getProfile, GetUsers, EditUser, DeleteUser }

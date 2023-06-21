@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react'
 import Pagination from '@/components/home/Pagination'
-import { AddProduct, DeleteProduct, GetAllProduct, GetAllCategories } from '@/services/API'
+import { AddProduct, DeleteProduct, GetAllProduct } from '@/services/API'
 import buscar from '@/assets/buscar.png'
 import useForm from '@/hooks/useForm'
 import validateFormProducts from '../../page/manageProducts/validateFormProducts'
@@ -11,7 +11,7 @@ import Loading from '@/components/isLoading/Loading'
 import { Link } from 'react-router-dom'
 
 const AddProducts = () => {
-  const newCategories = GetAllCategories()
+  const { newCategories } = useProductContext()
   const [errorsAddProduct, setErrorsAddProduct] = useState({})
   const sendData = async (data) => {
     const newErros = validateFormProducts(input)
@@ -118,14 +118,16 @@ const AddProducts = () => {
 }
 
 const DeleteProducts = () => {
-  const { isLoading, setSearch, setSelectedOption } = useProductContext()
-  const products = GetAllProduct()
   const productsByPage = 33
   const [currentPage, setCurrentePage] = useState(1)
-  const totalProducts = products.length
   const lastIndex = currentPage * productsByPage
   const firstIndez = lastIndex - productsByPage
+
   const [localValue, setLocalValue] = useState('')
+  const { isLoading, setSearch, setSelectedOption } = useProductContext()
+  const products = GetAllProduct()
+  const totalProducts = products.length
+
   const handleSubmit = (event) => {
     event.preventDefault()
     if (localValue) {
@@ -142,7 +144,6 @@ const DeleteProducts = () => {
           title: 'Producto Eliminado',
           color: 'rgb(83, 83, 83)',
           width: '20em'
-
         }
         )
       }
@@ -153,6 +154,7 @@ const DeleteProducts = () => {
       })
     }
   }
+
   return (
     <>
       {isLoading

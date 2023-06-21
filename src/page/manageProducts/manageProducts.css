@@ -19,7 +19,7 @@ ul{
     border-radius: 10px;
     padding: 5px;
 }
-#formAddProducts button, #formEditProducts button, #formCategories button{
+#formAddProducts button, #formEditProducts button, #formCategories button, #formUser button{
     margin-top: 20px;
     border-style: none;
     padding: 10px;
@@ -33,9 +33,13 @@ ul{
 #formEditProducts font{
     vertical-align: 'inherit'
 }
-#formEditProducts select{
+#formEditProducts select, #formUser select{
     height: auto;
 }
-#formCategories button{
+#formCategories button, #formUser button{
     margin-right: 20px;
 }
+@media (min-width: 576px){
+#formUser .col-sm-12 {
+    padding: 40px;
+}}

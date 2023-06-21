@@ -1,8 +1,8 @@
 import React from 'react'
-import { GetAllCategories } from '@/services/API'
 import { Link } from 'react-router-dom'
+import { useProductContext } from '../../hooks/UseProductContext'
 const DropdownCategories = () => {
-  const newCategories = GetAllCategories()
+  const { newCategories } = useProductContext()
   return (
     <>
       <div className='dropdown'>
