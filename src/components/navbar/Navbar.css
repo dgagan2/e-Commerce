@@ -1,0 +1,60 @@
+#logo{
+    width: 140px;
+}
+header{
+    position: fixed;
+    right: 0px;
+    left: 0px;
+}
+.navHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 50px 0px 50px;
+    background-color: rgb(83, 83, 83);
+    justify-content: space-around;
+}
+.formSearch{
+    width: 100%;
+}
+.searchButton{
+    border-style: none;
+}
+.formSearch input{
+  width: 80%;
+}
+.searchButton img{
+    width: 25px;
+}
+nav button{
+    background-color: transparent;
+}
+.sectionSearch{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 50%;
+    flex-direction: row;
+}
+
+.userLoggedIn button{
+    border-style: none;
+    color: white;
+}
+#buttonLogin img, #buttonCartIcon img{
+    width: 35px;
+}
+#buttonLogin img, .searchButton img, #buttonCartIcon img{
+    filter: invert(1);
+    padding-right: 5px;
+}
+.formSearch input{
+    border-radius: 15px;
+    border-style: none;
+    height: 35px;
+}
+.dropdownUser{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
