@@ -1,12 +1,15 @@
-#logo{
+#logo {
     width: 140px;
 }
-header{
+
+header {
     position: fixed;
     right: 0px;
     left: 0px;
+    z-index: 10;
 }
-.navHeader{
+
+.navHeader {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -14,22 +17,28 @@ header{
     background-color: rgb(83, 83, 83);
     justify-content: space-around;
 }
-.formSearch{
+
+.formSearch {
     width: 100%;
 }
-.searchButton{
+
+.searchButton {
     border-style: none;
 }
-.formSearch input{
-  width: 80%;
+
+.formSearch input {
+    width: 80%;
 }
-.searchButton img{
+
+.searchButton img {
     width: 25px;
 }
-nav button{
+
+nav button {
     background-color: transparent;
 }
-.sectionSearch{
+
+.sectionSearch {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -37,23 +46,30 @@ nav button{
     flex-direction: row;
 }
 
-.userLoggedIn button{
+.userLoggedIn button {
     border-style: none;
     color: white;
 }
-#buttonLogin img, #buttonCartIcon img{
+
+#buttonLogin img,
+#buttonCartIcon img {
     width: 35px;
 }
-#buttonLogin img, .searchButton img, #buttonCartIcon img{
+
+#buttonLogin img,
+.searchButton img,
+#buttonCartIcon img {
     filter: invert(1);
     padding-right: 5px;
 }
-.formSearch input{
+
+.formSearch input {
     border-radius: 15px;
     border-style: none;
     height: 35px;
 }
-.dropdownUser{
+
+.dropdownUser {
     display: flex;
     flex-direction: row;
     gap: 30px;

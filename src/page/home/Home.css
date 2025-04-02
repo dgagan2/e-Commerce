@@ -1,8 +1,9 @@
-main{
+main {
     position: initial;
     margin-top: 100px;
 }
-.listProducts ul{
+
+.listProducts ul {
     list-style: none;
     margin: 10;
     padding: 10;
@@ -11,11 +12,13 @@ main{
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     width: 80%;
 }
-.listProducts img{
+
+.listProducts img {
     width: 260px;
     height: 300px;
 }
-.listProducts{
+
+.listProducts {
     display: flex;
     padding: 30px;
     justify-content: center;
@@ -23,66 +26,91 @@ main{
     flex-direction: column;
     align-content: center;
 }
-.listProducts a{
+
+.listProducts a {
     color: black;
 }
-.listProducts li{
-    padding: 10px;
-    width: min-content;
+
+.listProducts li {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    position: relative;
+    padding: 10px;
+    width: min-content;
+
+
 }
-.listProducts p{
-padding-top: 10px;
-font-weight: 400;
+
+#btns_moreInfo {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
 }
-#imgShoppingCart{
+
+.listProducts p {
+    padding-top: 10px;
+    font-weight: 400;
+}
+
+#imgShoppingCart {
     width: 30px;
     height: 30px;
 }
-.page-link.active, .active>.page-link{
+
+.page-link.active,
+.active>.page-link {
     border-color: black !important;
 }
-.pagination{
+
+.pagination {
     --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgb(0 0 0 / 63%) !important;
 }
-.page-item .active{
+
+.page-item .active {
     background-color: brown;
 }
-.pagination{
+
+.pagination {
     display: flex;
-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
+
 @media (max-width: 730px) {
-   .navHeader{
-    flex-direction: column;
-    gap: 5px;
-   }
-   main{
-    margin-top: 170px;
-   }
-   .sectionSearch{
-    width: 100%;
-   }
+    .navHeader {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    main {
+        margin-top: 170px;
+    }
+
+    .sectionSearch {
+        width: 100%;
+    }
 }
+
 @media (max-width: 540px) {
-   .sectionSearch{
-    flex-direction: column;
-   }
-   .formSearch{
-    display: flex;
-    justify-content: center;
-   }
-   main{
-    margin-top: 200px;
-   }
-   .navHeader{
-    padding-bottom: 20px;
-   }
- }
+    .sectionSearch {
+        flex-direction: column;
+    }
+
+    .formSearch {
+        display: flex;
+        justify-content: center;
+    }
+
+    main {
+        margin-top: 200px;
+    }
+
+    .navHeader {
+        padding-bottom: 20px;
+    }
+}

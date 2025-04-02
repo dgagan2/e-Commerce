@@ -37,10 +37,10 @@ const ListProductsHome = ({ newProducts }) => {
           {newProducts.map((p) => (
             <li key={p.id}>
               <img src={p?.images[0]} alt='' />
-              <p>{p.title}</p>
-              <p>{p.description}</p>
-              <b>$ {p.price}</b>
-              <div className='d-flex flex-row justify-content-evenly align-items-center'>
+              <p className='text-center'>{p.title}</p>
+              <p className='pb-5'>{p.description}</p>
+              <b style={{ position: 'absolute', bottom: 30, left: '50%', transform: 'translate(-50%, -50%)' }}>$ {p.price}</b>
+              <div className='d-flex flex-row justify-content-evenly align-items-center' id='btns_moreInfo'>
                 <Link to={`/details/${p.id}`}>Ver detalles</Link>
                 <button
                   style={{ borderStyle: 'none', backgroundColor: 'transparent' }}
