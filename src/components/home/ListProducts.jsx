@@ -8,7 +8,7 @@ import { useUserContext } from '../../hooks/UseUserContext'
 import Swal from 'sweetalert2'
 const ListProductsHome = ({ newProducts }) => {
   const { error, setShoppingList, shoppingList } = useProductContext()
-  const [productsByPage, setProductsByPage] = useState(15)
+  const [productsByPage, setProductsByPage] = useState(16)
   const [currentPage, setCurrentePage] = useState(1)
   const totalProducts = newProducts.length
   const lastIndex = currentPage * productsByPage
